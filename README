@@ -1,0 +1,12 @@
+
+Basic java example of initiating a SAML authentication flow and consuming the resulting assertion.
+
+============================================
+REQUIRED / RECOMMENDED THIRD PARTY LIBRARIES
+============================================
+
+commons-codec-1.6.jar -- for base64 parsing
+log4j-1.2.16.jar -- for logging
+
+jstl.jar -- (optional) for use in JSP as needed
+standard.jar -- (optional) for use in JSP as needed
