@@ -3,6 +3,8 @@ package com.onelogin.saml;
 import java.io.ByteArrayOutputStream;
 import java.nio.charset.Charset;
 import java.text.SimpleDateFormat;
+import java.text.DateFormat;
+import java.util.TimeZone;
 import java.util.Date;
 import java.util.UUID;
 
@@ -24,9 +26,11 @@ public class AuthRequest {
 	
 	public AuthRequest(AppSettings appSettings, AccountSettings accountSettings){		
 		this.appSettings = appSettings;
-		id="_"+UUID.randomUUID().toString();		
-		SimpleDateFormat simpleDf = new SimpleDateFormat("yyyy-MM-dd'T'H:mm:ss");
-		issueInstant = simpleDf.format(new Date());		
+		id="_"+UUID.randomUUID().toString();
+		
+    DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
+    df.setTimeZone(TimeZone.getTimeZone("UTC"));
+		issueInstant = df.format(new Date());
 	}
 	
 	public String getRequest(int format) throws XMLStreamException {
@@ -50,19 +54,21 @@ public class AuthRequest {
 		
 		writer.writeStartElement("samlp", "NameIDPolicy", "urn:oasis:names:tc:SAML:2.0:protocol");
 		
-		writer.writeAttribute("Format", "urn:oasis:names:tc:SAML:2.0:nameid-format:unspecified");
+		// writer.writeAttribute("Format", "urn:oasis:names:tc:SAML:2.0:nameid-format:unspecified");
+		writer.writeAttribute("Format", "urn:oasis:names:tc:SAML:2.0:nameid-format:entity");
+		
 		writer.writeAttribute("AllowCreate", "true");
 		writer.writeEndElement();
 		
-		writer.writeStartElement("samlp","RequestedAuthnContext","urn:oasis:names:tc:SAML:2.0:protocol");
+		// writer.writeStartElement("samlp","RequestedAuthnContext","urn:oasis:names:tc:SAML:2.0:protocol");
 		
-		writer.writeAttribute("Comparison", "exact");
-		writer.writeEndElement();
+		// writer.writeAttribute("Comparison", "exact");
+		// writer.writeEndElement();
 		
-		writer.writeStartElement("saml","AuthnContextClassRef","urn:oasis:names:tc:SAML:2.0:assertion");
-		writer.writeNamespace("saml", "urn:oasis:names:tc:SAML:2.0:assertion");
-		writer.writeCharacters("urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport");
-		writer.writeEndElement();
+		// writer.writeStartElement("saml","AuthnContextClassRef","urn:oasis:names:tc:SAML:2.0:assertion");
+		// writer.writeNamespace("saml", "urn:oasis:names:tc:SAML:2.0:assertion");
+		// writer.writeCharacters("urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport");
+		// writer.writeEndElement();
 		
 		writer.writeEndElement();
 		writer.flush();		
