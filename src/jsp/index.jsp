@@ -12,17 +12,17 @@
   AppSettings appSettings = new AppSettings();
 
   // set the URL of the consume.jsp (or similar) file for this app. The SAML Response will be posted to this URL
-  appSettings.setAssertionConsumerServiceUrl("http://68.169.49.120:8080/testOneLogin/consume.jsp");
+  appSettings.setAssertionConsumerServiceUrl("http://demopartner.example.junyo.com:8080/java-saml/consume.jsp");
 
   // set the issuer of the authentication request. This would usually be the URL of the issuing web application
-  appSettings.setIssuer("https://www.mywebapp.com");
+  appSettings.setIssuer("http://demopartner.example.junyo.com/saml2");
   
   // the accSettings object contains settings specific to the users account. 
   // At this point, your application must have identified the users origin
   AccountSettings accSettings = new AccountSettings();
 
   // The URL at the Identity Provider where to the authentication request should be sent
-  accSettings.setIdpSsoTargetUrl("https://app.onelogin.com/saml/signon/20956");
+  accSettings.setIdpSsoTargetUrl("http://idp.staging.junyo.com/idp/saml2/idp/SSOService.php");
   
   // Generate an AuthRequest and send it to the identity provider
   AuthRequest authReq = new AuthRequest(appSettings, accSettings);

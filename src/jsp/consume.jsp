@@ -8,16 +8,20 @@
 </head>
 <body>
 <%
-  String certificateS ="MIIBrTCCAaGgAwIBAgIBATADBgEAMGcxCzAJBgNVBAYTAlVTMRMwEQYDVQQIDApD"+
-    "YWxpZm9ybmlhMRUwEwYDVQQHDAxTYW50YSBNb25pY2ExETAPBgNVBAoMCE9uZUxv"+
-    "Z2luMRkwFwYDVQQDDBBhcHAub25lbG9naW4uY29tMB4XDTExMDMxMTAwMjc0OVoX"+
-    "DTE2MDMxMDAwMjc0OVowZzELMAkGA1UEBhMCVVMxEzARBgNVBAgMCkNhbGlmb3Ju"+
-    "aWExFTATBgNVBAcMDFNhbnRhIE1vbmljYTERMA8GA1UECgwIT25lTG9naW4xGTAX"+
-    "BgNVBAMMEGFwcC5vbmVsb2dpbi5jb20wgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJ"+
-    "AoGBALfqtQf59sdh8AqMtrTMv1wONW53Rj29zzCPy1di3qJZ/PzHvYurTf9GVBz9"+
-    "ZyNLBfkt16dhv/dLTzTxJVAqnKDRcnwhskLvWp+8nPnqnNDsousAYzMs63rYO+/f"+
-    "qdt/19BZrpm7zZI6BWzQKimTLS0gYpgkqbreoKK+AdbbwtyXAgMBAAEwAwYBAAMB"+
-    "AA==";
+String certificateS = "MIICgTCCAeoCCQCbOlrWDdX7FTANBgkqhkiG9w0BAQUFADCBhDELMAkGA1UEBhMC"+
+											"Tk8xGDAWBgNVBAgTD0FuZHJlYXMgU29sYmVyZzEMMAoGA1UEBxMDRm9vMRAwDgYD"+
+											"VQQKEwdVTklORVRUMRgwFgYDVQQDEw9mZWlkZS5lcmxhbmcubm8xITAfBgkqhkiG"+
+											"9w0BCQEWEmFuZHJlYXNAdW5pbmV0dC5ubzAeFw0wNzA2MTUxMjAxMzVaFw0wNzA4"+
+										  "MTQxMjAxMzVaMIGEMQswCQYDVQQGEwJOTzEYMBYGA1UECBMPQW5kcmVhcyBTb2xi"+
+											"ZXJnMQwwCgYDVQQHEwNGb28xEDAOBgNVBAoTB1VOSU5FVFQxGDAWBgNVBAMTD2Zl"+
+											"aWRlLmVybGFuZy5ubzEhMB8GCSqGSIb3DQEJARYSYW5kcmVhc0B1bmluZXR0Lm5v"+
+											"MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDivbhR7P516x/S3BqKxupQe0LO"+
+											"NoliupiBOesCO3SHbDrl3+q9IbfnfmE04rNuMcPsIxB161TdDpIesLCn7c8aPHIS"+
+											"KOtPlAeTZSnb8QAu7aRjZq3+PbrP5uW3TcfCGPtKTytHOge/OlJbo078dVhXQ14d"+
+											"1EDwXJW1rRXuUt4C8QIDAQABMA0GCSqGSIb3DQEBBQUAA4GBACDVfp86HObqY+e8"+
+											"BUoWQ9+VMQx1ASDohBjwOsg2WykUqRXF+dLfcUH9dWR63CtZIKFDbStNomPnQz7n"+
+											"bK+onygwBspVEbnHuUihZq3ZUdmumQqCw4Uvs/1Uvq3orOo/WJVhTyvLgFVK2Qar"+
+											"Q4/67OZfHd7R+POBXhophSMv1ZOo";
 
   // user account specific settings. Import the certificate here
   AccountSettings accountSettings = new AccountSettings();
