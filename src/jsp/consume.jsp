@@ -27,22 +27,14 @@
   samlResponse.loadXmlFromBase64(request.getParameter("SAMLResponse"));
 
   if (samlResponse.isValid()) {
-
-    // the signature of the SAML Response is valid. The source is trusted
-  	java.io.PrintWriter writer = response.getWriter();
-  	writer.write("OK!");
-  	String nameId = samlResponse.getNameId();
-  	writer.write(nameId);
-  	writer.flush();
-	
-  } else {
-
-    // the signature of the SAML Response is not valid
-  	java.io.PrintWriter writer = response.getWriter();
-  	writer.write("Failed");
-  	writer.flush();
-
-  }
 %>
+	SAML Response is valid. The source is trusted.<br/>
+  The SAML NameId is '<%= samlResponse.getNameId() %>'
+
+<% } else { %>
+
+	Failed. :(
+
+<% } %>
 </body>
 </html>
