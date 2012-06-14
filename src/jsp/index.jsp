@@ -33,7 +33,7 @@
 </head>
 <body>
 SAMLRequest will = <%= URLDecoder.decode(reqString) %>
-<form method='POST' action="http://idp.staging.junyo.com/simplesamlphp/www/saml2/idp/SSOService.php">
+<form method='POST' action="http://idp.staging.junyo.com/idp/saml2/idp/SSOService.php">
       <input type="hidden" name="SAMLRequest" value="<%= URLDecoder.decode(reqString) %>" />
       <input type="submit" value="Try Posting It" />
 </form>
