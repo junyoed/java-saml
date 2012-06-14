@@ -1,6 +1,24 @@
 
 Basic java example of initiating a SAML authentication flow and consuming the resulting assertion.
 
+=======================
+BUILD / INSTALL / SETUP
+=======================
+
+1) Download the required libraries (see below) and place them in lib/
+
+2) Check src/jsp/index.jsp to make sure that the configuration strings will work for your test environment
+	- demopartner.example.junyo.com is in public DNS to point to 127.0.0.1 (localhost), you can change this or use a hosts 
+	  file if you would like to test somewhere else.
+	- your servlet container is assumed to be running on port 8080, change the port as needed.
+	- do _not_ change the issuer string, even if you change the actual URLs used.
+	
+3) Build with ant
+
+4) Deploy the WAR file
+
+5) Happy testing! 
+
 ============================================
 REQUIRED / RECOMMENDED THIRD PARTY LIBRARIES
 ============================================
