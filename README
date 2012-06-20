@@ -5,26 +5,16 @@ Basic java example of initiating a SAML authentication flow and consuming the re
 BUILD / INSTALL / SETUP
 =======================
 
-1) Download the required libraries (see below) and place them in lib/
+1) You must have Maven 3 installed (Maven 2 might work, it's untested)
 
-2) Check src/jsp/index.jsp to make sure that the configuration strings will work for your test environment
-	- demopartner.example.junyo.com is in public DNS to point to 127.0.0.1 (localhost), you can change this or use a hosts 
-	  file if you would like to test somewhere else.
-	- your servlet container is assumed to be running on port 8080, change the port as needed.
-	- do _not_ change the issuer string, even if you change the actual URLs used.
-	
-3) Build with ant
+2) You need the DNS name demopartner.example.junyo.com to resolve to localhost.
 
-4) Deploy the WAR file
+3) You need to run this on port 8080.
 
-5) Happy testing! 
+4) Run
 
-============================================
-REQUIRED / RECOMMENDED THIRD PARTY LIBRARIES
-============================================
+    mvn jetty:run
 
-commons-codec-1.6.jar -- for base64 parsing
-log4j-1.2.16.jar -- for logging
+Which should start up the web server. The test page should then be available at
 
-jstl.jar -- (optional) for use in JSP as needed
-standard.jar -- (optional) for use in JSP as needed
+http://demopartner.example.junyo.com:8080/java-saml/
