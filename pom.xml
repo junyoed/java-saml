@@ -1,0 +1,72 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.junyo</groupId>
+  <artifactId>java-saml</artifactId>
+  <version>0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+  <inceptionYear>2012</inceptionYear>
+  <name>java-saml</name>
+  <description>Java SAML example project</description>
+
+  <issueManagement>
+    <system>GitHub</system>
+    <url>https://github.com/junyoed/java-saml/issues</url>
+  </issueManagement>
+
+  <scm>
+    <connection>scm:git:git://github.com/junyoed/java-saml.git</connection>
+    <developerConnection>scm:git:git@github.com/junyoed/java-saml.git</developerConnection>
+    <url>git://github.com/junyoed/java-saml.git/tree/master</url>
+  </scm>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>commons-codec</groupId>
+      <artifactId>commons-codec</artifactId>
+      <version>1.6</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>1.6.6</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-log4j12</artifactId>
+      <version>1.6.6</version>
+    </dependency>
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.10</version>
+    </dependency>
+
+  </dependencies>
+
+  <build>
+    <finalName>java-saml</finalName>
+
+    <plugins>
+      <plugin>
+        <groupId>org.mortbay.jetty</groupId>
+        <artifactId>jetty-maven-plugin</artifactId>
+
+        <configuration>
+          <webAppConfig>
+            <contextPath>/java-saml</contextPath>
+          </webAppConfig>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+
+</project>
