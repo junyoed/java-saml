@@ -22,7 +22,7 @@
   AccountSettings accSettings = new AccountSettings();
 
   // The URL at the Identity Provider where to the authentication request should be sent
-  accSettings.setIdpSsoTargetUrl("http://idp.staging.junyo.com/idp/saml2/idp/SSOService.php");
+  accSettings.setIdpSsoTargetUrl("https://idp.junyo.com/idp/saml2/idp/SSOService.php");
   
   // Generate an AuthRequest and send it to the identity provider
   AuthRequest authReq = new AuthRequest(appSettings, accSettings);
@@ -33,7 +33,7 @@
 </head>
 <body>
 SAMLRequest will = <%= URLDecoder.decode(reqString) %>
-<form method='POST' action="http://idp.staging.junyo.com/idp/saml2/idp/SSOService.php">
+<form method='POST' action="https://idp.junyo.com/idp/saml2/idp/SSOService.php">
       <input type="hidden" name="SAMLRequest" value="<%= URLDecoder.decode(reqString) %>" />
       <input type="submit" value="Try Posting It" />
 </form>
